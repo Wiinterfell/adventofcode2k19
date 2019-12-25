@@ -52,5 +52,3 @@ with open("input5.txt") as fp:
 		else:
 			print("error " + opcode)
 			break
-
-	print("out")
