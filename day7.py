@@ -69,22 +69,21 @@ def runInstr(instr, firstInput, secondInput):
 		else:
 			print("error " + str(opcode))
 			return 0
+	return 0
 
 
 userInput = 0
-with open("input5.txt") as fp:
+with open("input7.txt") as fp:
 	instrStr = fp.readline().split(",")
  	instr = list(map(int, instrStr))
 
 maxOutput = 0
 settings = [0,1,2,3,4]
 for permutation in (itertools.permutations(settings, 5)):
-	print("combs " + str(permutation))
 	secondInput = userInput
 	for i in range(5):
 		instrCopy = list(instr)
 		secondInput = runInstr(instrCopy, permutation[i], secondInput)
-		print("res " + str(secondInput))
 	if (secondInput > maxOutput):
 		maxOutput = secondInput
 print(maxOutput)
